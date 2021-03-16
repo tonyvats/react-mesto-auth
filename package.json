@@ -44,6 +44,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tonyvats/mesto-react.git"
+    "url": "git+https://tonyvats.github.io/react-mesto-auth.git"
   }
 }
