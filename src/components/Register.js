@@ -24,8 +24,8 @@ function Register({handleRegister}) {
         <div className='register'>
             <h2 className='register__title'>Регистрация</h2>
             <form className='register__form' onSubmit={handleSubmit}>
-                <input className='register__input' placeholder='email' type='email' required minLength='2' maxLength='40' onChange={handleChangeEmail}/>
-                <input className='register__input' placeholder='Пароль' type='password' required minLength='2' maxLength='40' onChange={handleChangePassword} />
+                <input className='register__input' placeholder='email' type='email' required minLength='2' maxLength='40' value={email} onChange={handleChangeEmail}/>
+                <input className='register__input' placeholder='Пароль' type='password' required minLength='2' maxLength='40' value={password} onChange={handleChangePassword} />
                 <button type='submit' className='register__button-save' onSubmit={handleSubmit}>Зарегистрироваться</button>
             </form>
             <div className='register__signin'>

@@ -9,12 +9,12 @@ import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import ImagePopup from '../components/ImagePopup';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
-import api from '../utils/Api';
+import api from '../utils/api';
 import ProtectedRoute from './ProtectedRoute';
 import Login from './Login';
 import Register from './Register';
 import InfoTooltip from './InfoTooltip';
-import * as auth from '../utils/Auth';
+import * as auth from '../utils/auth';
 
 function App() {
 
@@ -27,7 +27,7 @@ function App() {
     const [imageData, setImageData] = React.useState(null)
     
     const [cards, setCards] = React.useState([])
-    const [currentUser,  setCurrentUser] = React.useState(""); 
+    const [currentUser,  setCurrentUser] = React.useState({}); 
 
     const [loggedIn, setLoggedIn] = React.useState(false);
     const [isInfoTooltipOpen, setIsInfoTooltipOpen] = React.useState(false);
@@ -180,7 +180,7 @@ function App() {
     
     React.useEffect(() => {
         handleCheckToken()
-    }, [])
+    }, [loggedIn])
 
     return (
         <div className="page">
@@ -203,7 +203,6 @@ function App() {
                             onCardList={cards}
                             onCardLike={handleCardLike}
                             onDeleteCard={handleCardDelete}
-                            onCardList={cards}
                         >
                         </ProtectedRoute>
 
